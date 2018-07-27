@@ -3,7 +3,6 @@ import 'firebase/database/dist/index.cjs';
 
 import generateUsername from './helpers/generateUsername';
 import scrollControl from './helpers/scrollControl';
-import { checkForSession } from "./helpers/sessionControl";
 
 
 // Initialize Firebase
@@ -81,14 +80,6 @@ export function setAnonUser() {
 	return {
 		type: SET_ANON_USER,
 		username: username
-	}
-}
-
-export const CHECK_AUTH_SESSION = "CHECK_AUTH_SESSION";
-export function checkAuthSession(dispatch) {
-	checkForSession(dispatch);
-	return{
-		
 	}
 }
 

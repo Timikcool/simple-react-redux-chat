@@ -1,16 +1,20 @@
 import React from 'react';
 import {Button, InputGroup, FormGroup, Container, Row, Col, Input, Form, InputGroupAddon} from 'reactstrap';
 import {Well} from 'react-bootstrap';
+import GitHubLoginButton from './GitHubLoginButton';
+
+ 
 
 
-const UserSelection = ({anonButtonHandler, acceptButtonHandler}) => {
+
+const UserSelection = ({anonButtonHandler, acceptButtonHandler, githubButtonHandler}) => {
 	let input;
 	return(
 		<Well>
 			<Container fluid={true}>
 				<Row>
 					<Col xs="12">
-			<h5>Set your nickname:</h5>
+			<h5>Set your anonymous nickname:</h5>
 			<Form onSubmit={(e)=>{
 				e.preventDefault(); 
 			if (!input.value.trim()) {
@@ -25,7 +29,10 @@ const UserSelection = ({anonButtonHandler, acceptButtonHandler}) => {
       </InputGroupAddon>
     </InputGroup>
   </FormGroup>
-			<Button className="accept-name-btn" outline color="primary" onClick={anonButtonHandler}>Or randomize!</Button>
+			<Container className="accept-name-btn">
+			<p>Also you can</p> <Button  outline color="primary" onClick={anonButtonHandler}>get random name</Button> <p>or use</p>
+			<GitHubLoginButton callback={githubButtonHandler} />
+			</Container>
 			</Form>
 					</Col>
 				</Row>

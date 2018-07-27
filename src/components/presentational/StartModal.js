@@ -2,6 +2,7 @@ import React from 'react'
 import {Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col, Button} from 'reactstrap'
 import SelectUser from '../containers/SelectUser'
 
+
 const StartModal = ({username, isShowingModal,confirmButtonHandler}) =>{
 	return(
 		<Modal size='lg' isOpen={isShowingModal} backdrop="static">

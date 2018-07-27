@@ -5,6 +5,7 @@ import { getMessages } from '../../actions';
 import ModalContainer from '../containers/ModalContainer';
 import { Container } from 'reactstrap';
 
+
 let App = ({ dispatch }) => {
 	dispatch(getMessages(dispatch));
 	return <React.Fragment>

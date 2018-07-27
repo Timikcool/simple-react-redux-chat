@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		acceptButtonHandler: (username) => {
 			dispatch(setUser(username))
+		},
+		githubButtonHandler: (username)=>{
+			dispatch(setUser(username));
 		}
 	}
 }

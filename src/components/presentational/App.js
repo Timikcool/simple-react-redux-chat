@@ -15,7 +15,7 @@ let App = ({ dispatch }) => {
 		</Container>
 		<footer className="footer">
 			<Container>
-				<span className="text-muted">Used: <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">react</a> <a href="https://https://redux.js.org/" target="_blank" rel="noopener noreferrer">redux</a> <a href="https://github.com/reduxjs/react-redux" target="_blank" rel="noopener noreferrer">react-redux</a> <a href="https://reactstrap.github.io/" target="_blank" rel="noopener noreferrer">reactstrap</a></span>
+				<span className="text-muted">Used: <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">react</a> <a href="https://https://redux.js.org/" target="_blank" rel="noopener noreferrer">redux</a> <a href="https://reactstrap.github.io/" target="_blank" rel="noopener noreferrer">reactstrap</a> <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">firebase</a></span>
 			</Container>
 		</footer>
 	</React.Fragment>

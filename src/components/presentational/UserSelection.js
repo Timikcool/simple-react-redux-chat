@@ -31,7 +31,7 @@ const UserSelection = ({anonButtonHandler, acceptButtonHandler, githubButtonHand
   </FormGroup>
 			<Container className="accept-name-btn">
 			<p>Also you can</p> <Button  outline color="primary" onClick={anonButtonHandler}>get random name</Button> <p>or use</p>
-			<GitHubLoginButton callback={githubButtonHandler} />
+			<GitHubLoginButton callbackOnSuccess={githubButtonHandler} />
 			</Container>
 			</Form>
 					</Col>

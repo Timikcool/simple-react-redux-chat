@@ -3,6 +3,7 @@ import 'firebase/database/dist/index.cjs';
 
 import generateUsername from './helpers/generateUsername';
 import scrollControl from './helpers/scrollControl';
+import { setCookie } from './helpers/cookies';
 
 
 // Initialize Firebase
@@ -57,7 +58,7 @@ export function getMessages(dispatch) {
 	})
 	return {
 		type: SHOW_MESSAGES,
-		messages: [{ key: 10, text: 'if you see this then something went wrong', author: 'app' }]
+		messages: [{ key: 1, text: 'hello world', author: 'app' }]
 	}
 }
 function sendMessageToServer(username, text) {
@@ -76,7 +77,8 @@ function sendMessageToServer(username, text) {
 export const SET_ANON_USER = 'SET_ANON_USER';
 
 export function setAnonUser() {
-	let username = generateUsername()
+	let username = generateUsername();
+	setCookie('chat-user', username, {expires:720});
 	return {
 		type: SET_ANON_USER,
 		username: username
@@ -85,6 +87,7 @@ export function setAnonUser() {
 
 export const SET_USER = 'SET_USER';
 export function setUser(username) {
+	setCookie('chat-user', username, {expires:720});
 	return {
 		type: SET_USER,
 		username

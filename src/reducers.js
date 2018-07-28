@@ -11,6 +11,7 @@ import {
 	CLOSE_MODAL
 } from './actions'
 
+import { getCookie } from './helpers/cookies';
 
 
  function messages(state = {}, action) {
@@ -26,7 +27,7 @@ import {
 	}
 }
 
-function users(state = {username:'anonymous', isShowingModal:true}, action){
+function users(state = {username: getCookie('chat-user'), isShowingModal:true}, action){
 	switch (action.type)
 	{
 		case SET_ANON_USER:

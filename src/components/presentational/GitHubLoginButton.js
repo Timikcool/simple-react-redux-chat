@@ -1,6 +1,6 @@
 import React from 'react'
 import GitHubLogin from "react-github-login";
-const GitHubLoginButton = ({callback}) => {
+const GitHubLoginButton = ({callbackOnSuccess}) => {
 	const onSuccess = response => {
 		console.log("response.code", response.code);
 		fetch(
@@ -8,18 +8,17 @@ const GitHubLoginButton = ({callback}) => {
 			response.code
 			}`,
 			{ method: "GET" }
-		).then(r => {
+		).then(response => {
 			console.log("access token");
-			r.json().then(data => {
-				console.log(data.token);
+			response.json().then(data => {
+				console.log('#githublogin token',data.token);
 				fetch(
 					`https://api.github.com/user?access_token=${data.token}`,
 					{ method: 'GET' }
-				).then((r) => {
-					console.log(r);
+				).then(r => {
 					r.json().then((data) => {
-						console.log(data.login);
-						callback(data.login);
+						console.log('#githublogin login',data.login);
+						callbackOnSuccess(data.login);
 					})
 				});
 			});
@@ -30,11 +29,8 @@ const GitHubLoginButton = ({callback}) => {
 		<GitHubLogin
 			className="btn btn-outline-secondary"
 			clientId="ee453ac76d91c6ad7560"
-			redirectUri="http://localhost:3000/redirect.html"
+			redirectUri="https://my-react-redux-chat.firebaseapp.com/"
 			onSuccess={onSuccess}
-			onRequest={r => {
-				console.log(r);
-			}}
 			onFailure={onFailure}
 		/>)
 }

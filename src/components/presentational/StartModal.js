@@ -13,7 +13,7 @@ const StartModal = ({username, isShowingModal,confirmButtonHandler}) =>{
     <ModalBody>
 		<Container fluid={true}>
 			<Row>
-				<Col xs="12"><p>This webchat is flawlessly anonymous, open sourced and forever free! What else do you need?</p></Col>
+				<Col xs="12"><p>This webchat is flawlessly anonymous, <a href="https://github.com/Timikcool/simple-react-redux-chat">open sourced</a> and forever free! What else do you need?</p></Col>
 			</Row>
 			<Row>
 				<Col xs="12"> <SelectUser/> </Col>
